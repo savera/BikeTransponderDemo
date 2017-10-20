@@ -56,11 +56,11 @@ void draw(){
   for(Bicycle b: bikes){
     float r = random(1.0,1.2); 
    if(r == 1){
-      System.out.print("right"); 
+      print("right"); 
      //b.moveLeft(); 
      //background(dashboard); 
    }else{
-      System.out.print("left"); 
+      print("left"); 
      //b.moveLeft();
      //background(dashboard); 
   }
