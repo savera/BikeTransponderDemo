@@ -52,7 +52,7 @@ print(total);
   if (locator == total) {
     locator = 0;
   }//time between frames = 50 millis
-  if(prevTime+50 < millis()){
+  if(prevTime+100 < millis()){
     print (locator);
     image(images.get(locator), -200, 0);
     image(dashboard, 0, 0);
