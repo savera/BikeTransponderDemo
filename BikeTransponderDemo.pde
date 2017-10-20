@@ -20,7 +20,10 @@ void setup(){
   images = new ArrayList<PImage>();
   for (String imageName : imageNames) {
     try {
-      images.add(loadImage(imageName));
+      thisImage = loadImage(imageName);
+      thisImage.resize(1200,600);
+      images.add(thisImage);
+      
     } catch (Exception e) {}
   }
   total = images.size();
@@ -51,7 +54,7 @@ print(total);
   }//time between frames = 50 millis
   if(prevTime+50 < millis()){
     print (locator);
-    image(images.get(locator), 0, 0, 800, 400);
+    image(images.get(locator), -200, 0);
     image(dashboard, 0, 0);
     locator++;
     prevTime = millis();
