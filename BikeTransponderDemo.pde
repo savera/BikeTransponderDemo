@@ -15,7 +15,8 @@ void setup(){
   //setup timelapse
   images = new ArrayList<PImage>();
   for (int i = 0; i<300; i++) {
-    if (new File([""], "Documents/Processing/BackgroundImage/data/image"+i+".jpeg").exists()) {
+    File f = new File([""], "Documents/Processing/BackgroundImage/data/image"+i+".jpeg");
+    if (f.exists()) {
       images.add(loadImage("image"+i+".jpeg"));
     }
   }
