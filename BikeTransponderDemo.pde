@@ -41,11 +41,14 @@ for(Bicycle b: bikes){
 
 void draw(){
 
+print(total);
+
 //draw road
   if (locator == total) {
     locator = 0;
   }//time between frames = 50 millis
   if(prevTime+50 < millis()){
+    print (locator);
     image(0,0,images.get(locator));
     locator++;
     prevTime = millis();
