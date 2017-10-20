@@ -9,6 +9,8 @@ int total = 0;
 long prevTime = 0;
 
 void setup(){
+  print ("Startup");
+  
   dashboard = loadImage("dashboard.png");
   //size(dashboard.width, dashboard.height);
   size(793,716);
