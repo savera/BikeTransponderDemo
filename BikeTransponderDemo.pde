@@ -15,10 +15,9 @@ void setup(){
   //setup timelapse
   images = new ArrayList<PImage>();
   for (int i = 0; i<300; i++) {
-    File f = new File([""], "Documents/Processing/BackgroundImage/data/image"+i+".jpeg");
-    if (f.exists()) {
+    try {
       images.add(loadImage("image"+i+".jpeg"));
-    }
+    } catch (Exception e) {}
   }
   total = images.size();
   prevTime = millis();
