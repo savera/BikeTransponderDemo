@@ -11,7 +11,7 @@ void setup(){
   dashboard = loadImage("dashboard.png");
   //size(dashboard.width, dashboard.height);
   size(793,716);
-  background(dashboard);
+  //background(dashboard);
   
   //setup timelapse
   images = new ArrayList<PImage>();
