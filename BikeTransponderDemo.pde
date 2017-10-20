@@ -12,7 +12,7 @@ long prevTime = 0;
 void setup(){
   
   dashboard = loadImage("dashboard.png");
-  bike1 = new Bicycle(900,400,10,0.25,"bike.png");
+  bike1 = new Bicycle(900,55,10,0.25,"bike.png");
   size(793,716);
   
   //setup timelapse
@@ -62,10 +62,10 @@ for(int i = 0; i < 9; i++){
         print("hi");
 
       }
-      if(bike1.getX() <= 0){
+      if(bike1.getX() <= -230){
          bike1.setX(749); 
-         bike1.setY(55);
-         bike1.setSpeed(bike1.getSpeed()+0.5);
+         bike1.setY(random(50,300));
+         bike1.setSpeed(random(.25,1));
          bike1.moveRight(); 
       }
     }
