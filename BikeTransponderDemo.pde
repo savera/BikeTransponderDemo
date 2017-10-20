@@ -24,7 +24,7 @@ void setup(){
     }
   }
   total = images.size();
-  prevTime = System.currentTimeMillis();
+  prevTime = millis();
   //end timelapse setup
   
   bikes.add(new Bicycle(400,10,10,2));
@@ -47,7 +47,7 @@ void draw(){
   if (locator == total) {
     locator = 0;
   }//time between frames = 50 millis
-  if(prevTime+50 < System.currentTimeMillis()){
+  if(prevTime+50 < millis()){
     background(images.get(locator));
     locator++;
     prevTime = System.currentTimeMillis();
