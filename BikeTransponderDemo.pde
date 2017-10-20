@@ -1,3 +1,4 @@
+/* @pjs preload="dashboard.png"; */
 ArrayList<Bicycle> bikes = new ArrayList<Bicycle>(); 
 PImage dashboard;  
 
