@@ -51,7 +51,8 @@ print(total);
   }//time between frames = 50 millis
   if(prevTime+50 < millis()){
     print (locator);
-    image(images.get(locator), 0, 0);
+    image(images.get(locator), 0, 0, 800, 400);
+    image(dashboard, 0, 0);
     locator++;
     prevTime = millis();
   }
