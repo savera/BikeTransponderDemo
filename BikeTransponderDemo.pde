@@ -15,12 +15,9 @@ void setup(){
   
   //setup timelapse
   images = new ArrayList<PImage>();
-  System.out.println("Working Directory = " +
-    System.getProperty("user.dir"));
   for (int i = 0; i<300; i++) {
     if (new File("Documents/Processing/BackgroundImage/data/image"+i+".jpeg").exists()) {
       images.add(loadImage("image"+i+".jpeg"));
-      System.out.println("Added " + "image"+i+".jpeg");
     }
   }
   total = images.size();
@@ -50,7 +47,7 @@ void draw(){
   if(prevTime+50 < millis()){
     background(images.get(locator));
     locator++;
-    prevTime = System.currentTimeMillis();
+    prevTime = millis();
   }
 //end draw road
 
