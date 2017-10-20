@@ -2,11 +2,31 @@
 ArrayList<Bicycle> bikes = new ArrayList<Bicycle>(); 
 PImage dashboard;  
 
+ArrayList<PImage> images;
+int locator = 0;
+int total = 0;
+long prevTime = 0;
+
 void setup(){
   dashboard = loadImage("dashboard.png");
   //size(dashboard.width, dashboard.height);
   size(793,716);
-  background(dashboard); 
+  background(dashboard);
+  
+  //setup timelapse
+  images = new ArrayList<PImage>();
+  System.out.println("Working Directory = " +
+    System.getProperty("user.dir"));
+  for (int i = 0; i<300; i++) {
+    if (new File("Documents/Processing/BackgroundImage/data/image"+i+".jpeg").exists()) {
+      images.add(loadImage("image"+i+".jpeg"));
+      System.out.println("Added " + "image"+i+".jpeg");
+    }
+  }
+  total = images.size();
+  prevTime = System.currentTimeMillis();
+  //end timelapse setup
+  
   bikes.add(new Bicycle(400,10,10,2));
   bikes.add(new Bicycle(400,10,10,3));
   bikes.add(new Bicycle(400,10,10,1));
@@ -22,6 +42,19 @@ for(Bicycle b: bikes){
 }
 
 void draw(){
+
+//draw road
+  if (locator == total) {
+    locator = 0;
+  }//time between frames = 50 millis
+  if(prevTime+50 < System.currentTimeMillis()){
+    background(images.get(locator));
+    locator++;
+    prevTime = System.currentTimeMillis();
+  }
+//end draw road
+
+
   for(Bicycle b: bikes){
     float r = random(1.0,1.2); 
    if(r == 1){
